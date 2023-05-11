@@ -1,3 +1,3 @@
-Smart calculator
+SMART CALCULATOR
 =====================
 Work in progress.
