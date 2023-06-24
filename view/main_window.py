@@ -147,7 +147,7 @@ class CalculatorMain:
         if mode == "RPN":
             self.rpn_button()
         self.funcs_state_switch(state)
-        self.presenter.model.clear_expression()
+        self.presenter.clear_expression()
 
     def funcs_state_switch(self, state: str):
         for btn in self.parentheses_funcs:

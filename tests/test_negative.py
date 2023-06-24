@@ -14,7 +14,7 @@ def test_negative_cases(monkeypatch, case, expected_exception):
     def mock_set_error_to_entry(*args, **kwargs):
         print("I'm here")
 
-    monkeypatch.setattr("src.model.model.CalculatorModel.set_error_to_entry",
+    monkeypatch.setattr("SmartCalc.model.model.CalculatorModel.set_error_to_entry",
                         mock_set_error_to_entry)
 
     with pytest.raises(expected_exception):

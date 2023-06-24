@@ -3,7 +3,9 @@
 from view.main_window import CalculatorMain
 from view.history import CalculatorHistory
 from view.help import CalculatorHelp
+from view.graph import CalculatorGraph
 from view.utils import create_window, make_frames
+import tkinter as tk
 from tkinter import Tk
 from typing import Union
 
@@ -13,6 +15,7 @@ class CalculatorView:
         self.main_window = CalculatorMain(self)
         self.history = CalculatorHistory(self)
         self.help = CalculatorHelp()
+        self.graph = CalculatorGraph(self.main_window)
 
         self.help_state = False
         self.history_state = False
@@ -26,8 +29,7 @@ class CalculatorView:
         if btn == "H":
             self.open_section(self.history)
         if btn == "F(x)":
-            self.main_window.presenter.plot_preparing(
-                self.main_window.input_field.get()).show()
+            self.graph.graph_preparing()
 
     def open_section(self,
                      section: Union[CalculatorMain,

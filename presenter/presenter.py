@@ -110,17 +110,3 @@ class CalculatorPresenter:
         corrected_string = correct_string(input_field)
         result = self.model.calculate_expression(corrected_string)
         self.result_handling(result)
-
-    def plot_preparing(self, expression: str) -> Any:
-        """Подготовка к созданию графика"""
-        if not paranthesis_check(expression):
-            return
-
-        fixed_expression = plot_expression_handling(expression)
-        self.model.plot(fixed_expression)
-        plt.plot(self.plot_x, self.plot_y)
-        plt.xlabel('x')
-        plt.ylabel('f(x)')
-        plt.title('Graph of ' + expression)
-        plt.grid(True)
-        return plt

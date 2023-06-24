@@ -1,16 +1,19 @@
 import os
 
-# Путь установки приложения
+# Какой путь установки приложения ?
 while True:
-    install_path = input("Ведите путь для установки приложения: ")
-    if os.path.exists(install_path) \
-            or install_path == "":
+    install_path = input("Insert path to install application: ")
+    if os.path.exists(install_path):
         break
-    print("Эта директория не существует.")
+    elif install_path == "":
+        install_path = "/Applications"
+        break
+    else:
+        print("This directory is not exist.")
 
-# Создание ярлыка на рабочем столе
+# Создать ярлык на рабочем столе?
 while True:
-    answer = input("Создать ярлык на рабочем столе? (y/n) ")
+    answer = input("Create a desktop shortcut ? (y/n) ")
     if answer == "y":
         create_desktop_icon = True
         break
@@ -18,6 +21,17 @@ while True:
         create_desktop_icon = False
         break
     else:
-        print("Невалидный ответ.")
+        print("Invalid answer.")
 
-os.system("sh install.sh " + install_path + " " + str(create_desktop_icon))
+# Создание приложения
+os.system("python3 setup.py py2app")
+
+# Установка приложения
+os.system("cp -R \"$PWD/dist/SmartCalc.app\" " + install_path)
+os.system("rm -rf \"$PWD/dist\" \"$PWD/build\"")
+
+print("SmartCalc_v.3 has been installed in " + install_path + "\n")
+
+# Создание ярлыка
+if create_desktop_icon:
+    os.system("ln -s " + install_path + "/SmartCalc.app \"$HOME/Desktop/\"")
