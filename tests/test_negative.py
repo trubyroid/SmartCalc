@@ -11,11 +11,5 @@ calc_model = CalculatorModel()
                           ("()*()*()*0", TypeError)])
 def test_negative_cases(monkeypatch, case, expected_exception):
 
-    def mock_set_error_to_entry(*args, **kwargs):
-        print("I'm here")
-
-    monkeypatch.setattr("SmartCalc.model.model.CalculatorModel.set_error_to_entry",
-                        mock_set_error_to_entry)
-
     with pytest.raises(expected_exception):
-        calc_model.calculate_expression(case)
+        calc_model.get_result(case)

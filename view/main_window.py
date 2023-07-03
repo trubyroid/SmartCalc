@@ -11,7 +11,7 @@ from presenter.presenter import CalculatorPresenter
 class CalculatorMain:
     def __init__(self, view_proc):
         self.view_proc = view_proc
-        self.presenter = CalculatorPresenter(self)
+        self.presenter = None
 
         self.tk_window = None
         self.input_field = None
@@ -45,7 +45,7 @@ class CalculatorMain:
         self.parentheses_funcs = self._second[:3:]\
             + self._third + self._fourth[:2:]
 
-        self.except_funcs = ("C", "CE", "=", "x^", "mod")
+        self.except_funcs = ("C", "CE", "=", "x^")
         self.modes = ("PN", "RPN", "Default")
 
     @property
@@ -59,6 +59,9 @@ class CalculatorMain:
     @property
     def err_messages(self) -> tuple:
         return self._err_messages
+
+    def set_presenter(self, presenter: CalculatorPresenter):
+        self.presenter = presenter
 
     def create_gui(self) -> None:
         def configure_style() -> None:
@@ -121,7 +124,7 @@ class CalculatorMain:
 
     def write_or_use(self, btn: str) -> None:
         if self.input_field.get() in self._err_messages:
-            self.presenter.model.clear_expression()
+            self.presenter.clear_expression()
         if btn not in self.except_funcs:
             if btn in self.parentheses_funcs:
                 btn = btn[:-1]

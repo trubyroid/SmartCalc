@@ -8,35 +8,28 @@ import numpy as np
 
 
 class CalculatorModel:
-    def __init__(self, presenter=None):
-        self.presenter = presenter
-        self.result = None
+    def __init__(self):
+        ...
 
-    def set_error_to_entry(self, error):
-        self.presenter.set_error_to_entry(error)
-
-    def calculate_expression(self, expression: str, x: Any = 0) -> int:
+    def get_result(self, expression: str, x: Any = 0):
         """Eval используется для вычисления всех выражений.
         Безопасность обеспечивается запретом на ввод символов в
         entry-поле с клавиатуры"""
+        return eval(expression)
+
+    def calculate_expression(self, expression: str, x: Any = 0) -> Any:
         try:
-            self.result = eval(expression)
-            return self.result
+            return self.get_result(expression, x)
         except ZeroDivisionError:
-            self.set_error_to_entry("Infinity")
-            raise
+            return "Infinity"
         except SyntaxError:
-            self.set_error_to_entry("error")
-            raise
+            return "error"
         except ValueError:
-            self.set_error_to_entry("NaN")
-            raise
+            return "NaN"
         except TypeError:
-            self.set_error_to_entry("error")
-            raise
+            return "error"
         except Exception:
-            self.set_error_to_entry("Unknown error")
-            raise
+            return "Unknown error"
 
     def polish_calculate(self, tokens: list) -> int:
         """Алгоритм вычисления выражений в Польской нотации"""
@@ -46,13 +39,12 @@ class CalculatorModel:
             if len(stack) > 1:
                 operand2 = stack.pop()
                 operand1 = stack.pop()
-                result = self.calculate_expression(
-                    f"{operand1} {tokens[i]} {operand2}")
+                expression = f"{operand1} {tokens[i]} {operand2}"
             else:
                 operand = stack.pop()
-                result = self.calculate_expression(
-                    f"{tokens[i]} {operand}")
-            return result
+                expression = f"{tokens[i]} {operand}"
+
+            return self.calculate_expression(expression)
 
         def polish_paranthesis(tokens, stack):
             """Обрабатывает и вычисляет выражения внутри скобок"""
@@ -78,9 +70,3 @@ class CalculatorModel:
             i += 1
         if len(stack) == 1:
             return stack.pop()
-
-    def plot(self, fixed_expr: str) -> None:
-        """Вычисляет х и у для построения графика"""
-        self.presenter.x = np.linspace(-10000, 10000)
-        self.presenter.y = self.calculate_expression(fixed_expr,
-                                                     self.presenter.x)

@@ -5,13 +5,13 @@ from view.history import CalculatorHistory
 from view.help import CalculatorHelp
 from view.graph import CalculatorGraph
 from view.utils import create_window, make_frames
-import tkinter as tk
 from tkinter import Tk
 from typing import Union
 
 
 class CalculatorView:
     def __init__(self):
+
         self.main_window = CalculatorMain(self)
         self.history = CalculatorHistory(self)
         self.help = CalculatorHelp()
