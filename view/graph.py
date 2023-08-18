@@ -1,3 +1,7 @@
+"""
+В этом модуле производится подготовка и построение графика функции
+"""
+
 import tkinter as tk
 from tkinter import messagebox
 from presenter.utils import paranthesis_check, plot_expression_handling

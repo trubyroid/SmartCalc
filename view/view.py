@@ -1,4 +1,6 @@
-"""В этом модуле запускается программа и создаются окна"""
+"""
+В этом модуле запускается программа и создаются все возможные окна
+"""
 
 from view.main_window import CalculatorMain
 from view.history import CalculatorHistory
