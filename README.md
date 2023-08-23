@@ -6,5 +6,6 @@ SMARTCALC
 - Графики функций
 - Польские нотации
 
-## Старт
-Для установки зависимостей используйте `poetry install` если у вас есть poetry и `pip install .`, если нет.
+## Быстрый старт
+1. Для установки зависимостей используйте `poetry install` или `pip install -r requirements.txt`
+2. Зайдите в директорию smartcalc и используйте `python install_script.py`
