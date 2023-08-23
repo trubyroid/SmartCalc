@@ -7,7 +7,7 @@ SMARTCALC
 - Польские нотации
 
 ## Быстрый старт
-1. Для установки зависимостей вы можете использовать `poetry install` или `pip install -r requirements.txt`
+1. Для установки зависимостей вы можете использовать `poetry install` (в случае если у вас есть [Poetry](https://python-poetry.org/)) или по классике `pip install -r requirements.txt`
 2. Далее зайдите в директорию smartcalc и введите `python install_script.py`
 
 Скрипт запросит путь для установки, по умолчанию она будет произведена в директорию **/Applications**.   
