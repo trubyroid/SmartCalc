@@ -7,8 +7,4 @@ SMARTCALC
 - Польские нотации
 
 ## Старт
-Если у вас есть poetry:
-> poetry install
-
-Если нет:
-> pip install .
+Для установки зависимостей используйте 'poetry install' если у вас есть poetry и 'pip install .', если нет.
