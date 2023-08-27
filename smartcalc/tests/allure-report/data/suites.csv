@@ -1,26 +1,50 @@
 "Status","Start Time","Stop Time","Duration in ms","Parent Suite","Suite","Sub Suite","Test Class","Test Method","Name","Description"
-"passed","Sun Aug 27 19:48:00 MSK 2023","Sun Aug 27 19:48:00 MSK 2023","0","tests","test_simple_operations","","","","test_simple_operations[sqrt(4)-2]",""
-"passed","Sun Aug 27 19:48:00 MSK 2023","Sun Aug 27 19:48:00 MSK 2023","0","tests","test_simple_operations","","","","test_simple_operations[40*60-2400]",""
-"skipped","Sun Aug 27 19:48:00 MSK 2023","Sun Aug 27 19:48:00 MSK 2023","2","tests","test_simple_operations","","","","test_trigonometry_operations[tan(5)--3.380515006246585]","
+"passed","Sun Aug 27 19:48:00 MSK 2023","Sun Aug 27 19:48:00 MSK 2023","0","tests","test_simple_operations","","","","test_simple_operations[+-11--11]",""
+"passed","Sun Aug 27 19:48:00 MSK 2023","Sun Aug 27 19:48:00 MSK 2023","1","tests","test_simple_operations","","","","test_simple_operations[-7**5--16807]",""
+"passed","Sun Aug 27 19:48:00 MSK 2023","Sun Aug 27 19:48:00 MSK 2023","1","tests","test_negative","","","","test_negative_cases[()*()*()*0-TypeError]",""
+"passed","Sun Aug 27 19:48:00 MSK 2023","Sun Aug 27 19:48:00 MSK 2023","1","tests","test_polish_notation","","","","test_polish_notation[expression1-18]",""
+"passed","Sun Aug 27 19:48:00 MSK 2023","Sun Aug 27 19:48:00 MSK 2023","2","tests","test_polish_notation","","","","test_polish_notation[expression5-11]",""
+"passed","Sun Aug 27 19:48:00 MSK 2023","Sun Aug 27 19:48:00 MSK 2023","1","tests","test_simple_operations","","","","test_simple_operations[log10(100) + log10(10000)-6]",""
+"passed","Sun Aug 27 19:48:00 MSK 2023","Sun Aug 27 19:48:00 MSK 2023","2","tests","test_simple_operations","","","","test_simple_operations[1024+4-1028]",""
+"passed","Sun Aug 27 19:48:00 MSK 2023","Sun Aug 27 19:48:00 MSK 2023","2","tests","test_simple_operations","","","","test_simple_operations[12345*0-0]",""
+"passed","Sun Aug 27 19:48:00 MSK 2023","Sun Aug 27 19:48:00 MSK 2023","1","tests","test_simple_operations","","","","test_trigonometry_operations[sin(4)--0.7568024953079282]","
 В рамках этих тест-кейсов разные машины могут давать разный результат.
 Причина в разных способах округления чисел с плавающей точкой.
 "
-"passed","Sun Aug 27 19:48:00 MSK 2023","Sun Aug 27 19:48:00 MSK 2023","2","tests","test_polish_notation","","","","test_polish_notation[expression5-11]",""
-"passed","Sun Aug 27 19:48:00 MSK 2023","Sun Aug 27 19:48:00 MSK 2023","0","tests","test_simple_operations","","","","test_simple_operations[+-11--11]",""
-"passed","Sun Aug 27 19:48:00 MSK 2023","Sun Aug 27 19:48:00 MSK 2023","1","tests","test_simple_operations","","","","test_simple_operations[5*8+(3+3)-46]",""
-"passed","Sun Aug 27 19:48:00 MSK 2023","Sun Aug 27 19:48:00 MSK 2023","1","tests","test_simple_operations","","","","test_simple_operations[+11-11]",""
-"passed","Sun Aug 27 19:48:00 MSK 2023","Sun Aug 27 19:48:00 MSK 2023","1","tests","test_expressions","","","","test_expressions[((((4+5))))-2-7]",""
-"passed","Sun Aug 27 19:48:00 MSK 2023","Sun Aug 27 19:48:00 MSK 2023","1","tests","test_polish_notation","","","","test_polish_notation[expression2-1]",""
-"passed","Sun Aug 27 19:48:00 MSK 2023","Sun Aug 27 19:48:00 MSK 2023","1","tests","test_negative","","","","test_negative_cases[sqrt(-1)-ValueError]",""
+"passed","Sun Aug 27 19:48:00 MSK 2023","Sun Aug 27 19:48:00 MSK 2023","0","tests","test_simple_operations","","","","test_simple_operations[40*60-2400]",""
+"passed","Sun Aug 27 19:48:00 MSK 2023","Sun Aug 27 19:48:00 MSK 2023","0","tests","test_simple_operations","","","","test_simple_operations[sqrt(4)-2]",""
+"passed","Sun Aug 27 19:48:00 MSK 2023","Sun Aug 27 19:48:00 MSK 2023","1","tests","test_simple_operations","","","","test_trigonometry_operations[cos(8)--0.14550003380861354]","
+В рамках этих тест-кейсов разные машины могут давать разный результат.
+Причина в разных способах округления чисел с плавающей точкой.
+"
 "skipped","Sun Aug 27 19:48:01 MSK 2023","Sun Aug 27 19:48:01 MSK 2023","1","tests","test_simple_operations","","","","test_trigonometry_operations[asin(0.5)-0.5235987755982988]","
 В рамках этих тест-кейсов разные машины могут давать разный результат.
 Причина в разных способах округления чисел с плавающей точкой.
 "
+"passed","Sun Aug 27 19:48:00 MSK 2023","Sun Aug 27 19:48:00 MSK 2023","1","tests","test_negative","","","","test_negative_cases[15/0-ZeroDivisionError]",""
+"skipped","Sun Aug 27 19:48:00 MSK 2023","Sun Aug 27 19:48:00 MSK 2023","2","tests","test_simple_operations","","","","test_trigonometry_operations[tan(5)--3.380515006246585]","
+В рамках этих тест-кейсов разные машины могут давать разный результат.
+Причина в разных способах округления чисел с плавающей точкой.
+"
+"passed","Sun Aug 27 19:48:00 MSK 2023","Sun Aug 27 19:48:00 MSK 2023","2","tests","test_negative","","","","test_negative_cases[0+00123-SyntaxError]",""
 "passed","Sun Aug 27 19:48:00 MSK 2023","Sun Aug 27 19:48:00 MSK 2023","1","tests","test_polish_notation","","","","test_polish_notation[expression0-0]",""
+"passed","Sun Aug 27 19:48:00 MSK 2023","Sun Aug 27 19:48:00 MSK 2023","0","tests","test_simple_operations","","","","test_simple_operations[-7-3--10]",""
+"passed","Sun Aug 27 19:48:00 MSK 2023","Sun Aug 27 19:48:00 MSK 2023","1","tests","test_expressions","","","","test_expressions[((((4+5))))-2-7]",""
+"passed","Sun Aug 27 19:48:00 MSK 2023","Sun Aug 27 19:48:00 MSK 2023","1","tests","test_simple_operations","","","","test_simple_operations[2**5-32]",""
+"passed","Sun Aug 27 19:48:00 MSK 2023","Sun Aug 27 19:48:00 MSK 2023","1","tests","test_simple_operations","","","","test_simple_operations[+11-11]",""
+"passed","Sun Aug 27 19:48:00 MSK 2023","Sun Aug 27 19:48:00 MSK 2023","1","tests","test_simple_operations","","","","test_simple_operations[2+2*2-6]",""
 "passed","Sun Aug 27 19:48:00 MSK 2023","Sun Aug 27 19:48:00 MSK 2023","1","tests","test_simple_operations","","","","test_simple_operations[9%2%2-1]",""
+"passed","Sun Aug 27 19:48:00 MSK 2023","Sun Aug 27 19:48:00 MSK 2023","1","tests","test_simple_operations","","","","test_simple_operations[55-5-50]",""
+"passed","Sun Aug 27 19:48:00 MSK 2023","Sun Aug 27 19:48:00 MSK 2023","1","tests","test_expressions","","","","test_expressions[4**2*5/8+5-5%sqrt(4)-14]",""
+"passed","Sun Aug 27 19:48:00 MSK 2023","Sun Aug 27 19:48:00 MSK 2023","1","tests","test_polish_notation","","","","test_polish_notation[expression4--11]",""
+"passed","Sun Aug 27 19:48:00 MSK 2023","Sun Aug 27 19:48:00 MSK 2023","1","tests","test_simple_operations","","","","test_simple_operations[0+0+0+0+1-1]",""
+"passed","Sun Aug 27 19:48:00 MSK 2023","Sun Aug 27 19:48:00 MSK 2023","1","tests","test_simple_operations","","","","test_simple_operations[-7--3--4]",""
 "passed","Sun Aug 27 19:48:00 MSK 2023","Sun Aug 27 19:48:00 MSK 2023","1","tests","test_polish_notation","","","","test_polish_notation[expression6--11]",""
-"passed","Sun Aug 27 19:48:00 MSK 2023","Sun Aug 27 19:48:00 MSK 2023","1","tests","test_negative","","","","test_negative_cases[()*()*()*0-TypeError]",""
-"passed","Sun Aug 27 19:48:00 MSK 2023","Sun Aug 27 19:48:00 MSK 2023","1","tests","test_simple_operations","","","","test_trigonometry_operations[sin(4)--0.7568024953079282]","
+"passed","Sun Aug 27 19:48:00 MSK 2023","Sun Aug 27 19:48:00 MSK 2023","1","tests","test_polish_notation","","","","test_polish_notation[expression3--11]",""
+"passed","Sun Aug 27 19:48:00 MSK 2023","Sun Aug 27 19:48:00 MSK 2023","1","tests","test_simple_operations","","","","test_simple_operations[sqrt(256)-16]",""
+"passed","Sun Aug 27 19:48:00 MSK 2023","Sun Aug 27 19:48:00 MSK 2023","1","tests","test_negative","","","","test_negative_cases[sqrt(-1)-ValueError]",""
+"passed","Sun Aug 27 19:48:00 MSK 2023","Sun Aug 27 19:48:00 MSK 2023","1","tests","test_polish_notation","","","","test_polish_notation[expression2-1]",""
+"passed","Sun Aug 27 19:48:00 MSK 2023","Sun Aug 27 19:48:00 MSK 2023","1","tests","test_simple_operations","","","","test_trigonometry_operations[log(10) + log(10)-4.605170185988092]","
 В рамках этих тест-кейсов разные машины могут давать разный результат.
 Причина в разных способах округления чисел с плавающей точкой.
 "
@@ -28,35 +52,11 @@
 В рамках этих тест-кейсов разные машины могут давать разный результат.
 Причина в разных способах округления чисел с плавающей точкой.
 "
-"passed","Sun Aug 27 19:48:00 MSK 2023","Sun Aug 27 19:48:00 MSK 2023","1","tests","test_simple_operations","","","","test_simple_operations[sqrt(256)-16]",""
-"passed","Sun Aug 27 19:48:00 MSK 2023","Sun Aug 27 19:48:00 MSK 2023","1","tests","test_simple_operations","","","","test_simple_operations[log10(100) + log10(10000)-6]",""
-"passed","Sun Aug 27 19:48:00 MSK 2023","Sun Aug 27 19:48:00 MSK 2023","1","tests","test_polish_notation","","","","test_polish_notation[expression1-18]",""
-"passed","Sun Aug 27 19:48:00 MSK 2023","Sun Aug 27 19:48:00 MSK 2023","1","tests","test_simple_operations","","","","test_simple_operations[2+2*2-6]",""
-"passed","Sun Aug 27 19:48:00 MSK 2023","Sun Aug 27 19:48:00 MSK 2023","1","tests","test_simple_operations","","","","test_simple_operations[-7**5--16807]",""
-"passed","Sun Aug 27 19:48:00 MSK 2023","Sun Aug 27 19:48:00 MSK 2023","1","tests","test_simple_operations","","","","test_simple_operations[55-5-50]",""
-"passed","Sun Aug 27 19:48:00 MSK 2023","Sun Aug 27 19:48:00 MSK 2023","1","tests","test_simple_operations","","","","test_simple_operations[2**5-32]",""
-"passed","Sun Aug 27 19:48:00 MSK 2023","Sun Aug 27 19:48:00 MSK 2023","2","tests","test_negative","","","","test_negative_cases[0+00123-SyntaxError]",""
-"passed","Sun Aug 27 19:48:00 MSK 2023","Sun Aug 27 19:48:00 MSK 2023","1","tests","test_expressions","","","","test_expressions[4**2*5/8+5-5%sqrt(4)-14]",""
-"passed","Sun Aug 27 19:48:00 MSK 2023","Sun Aug 27 19:48:00 MSK 2023","1","tests","test_polish_notation","","","","test_polish_notation[expression3--11]",""
+"passed","Sun Aug 27 19:48:00 MSK 2023","Sun Aug 27 19:48:00 MSK 2023","2","tests","test_expressions","","","","test_expressions[(((4+5)*(8-2)*(3**2))+3)*2-978]",""
 "skipped","Sun Aug 27 19:48:01 MSK 2023","Sun Aug 27 19:48:01 MSK 2023","1","tests","test_simple_operations","","","","test_trigonometry_operations[atan(0.9)-0.7328151017865067]","
 В рамках этих тест-кейсов разные машины могут давать разный результат.
 Причина в разных способах округления чисел с плавающей точкой.
 "
-"passed","Sun Aug 27 19:48:00 MSK 2023","Sun Aug 27 19:48:00 MSK 2023","1","tests","test_simple_operations","","","","test_simple_operations[-7--3--4]",""
-"passed","Sun Aug 27 19:48:00 MSK 2023","Sun Aug 27 19:48:00 MSK 2023","1","tests","test_polish_notation","","","","test_polish_notation[expression4--11]",""
-"passed","Sun Aug 27 19:48:00 MSK 2023","Sun Aug 27 19:48:00 MSK 2023","2","tests","test_simple_operations","","","","test_simple_operations[1024+4-1028]",""
-"passed","Sun Aug 27 19:48:00 MSK 2023","Sun Aug 27 19:48:00 MSK 2023","0","tests","test_simple_operations","","","","test_simple_operations[-7-3--10]",""
-"passed","Sun Aug 27 19:48:00 MSK 2023","Sun Aug 27 19:48:00 MSK 2023","1","tests","test_negative","","","","test_negative_cases[15/0-ZeroDivisionError]",""
-"passed","Sun Aug 27 19:48:00 MSK 2023","Sun Aug 27 19:48:00 MSK 2023","2","tests","test_simple_operations","","","","test_simple_operations[12345*0-0]",""
-"passed","Sun Aug 27 19:48:00 MSK 2023","Sun Aug 27 19:48:00 MSK 2023","1","tests","test_simple_operations","","","","test_trigonometry_operations[cos(8)--0.14550003380861354]","
-В рамках этих тест-кейсов разные машины могут давать разный результат.
-Причина в разных способах округления чисел с плавающей точкой.
-"
-"passed","Sun Aug 27 19:48:00 MSK 2023","Sun Aug 27 19:48:00 MSK 2023","1","tests","test_simple_operations","","","","test_simple_operations[-203+-407--610]",""
-"passed","Sun Aug 27 19:48:00 MSK 2023","Sun Aug 27 19:48:00 MSK 2023","1","tests","test_simple_operations","","","","test_trigonometry_operations[log(10) + log(10)-4.605170185988092]","
-В рамках этих тест-кейсов разные машины могут давать разный результат.
-Причина в разных способах округления чисел с плавающей точкой.
-"
 "passed","Sun Aug 27 19:48:00 MSK 2023","Sun Aug 27 19:48:00 MSK 2023","1","tests","test_simple_operations","","","","test_simple_operations[500/100-5]",""
-"passed","Sun Aug 27 19:48:00 MSK 2023","Sun Aug 27 19:48:00 MSK 2023","2","tests","test_expressions","","","","test_expressions[(((4+5)*(8-2)*(3**2))+3)*2-978]",""
-"passed","Sun Aug 27 19:48:00 MSK 2023","Sun Aug 27 19:48:00 MSK 2023","1","tests","test_simple_operations","","","","test_simple_operations[0+0+0+0+1-1]",""
+"passed","Sun Aug 27 19:48:00 MSK 2023","Sun Aug 27 19:48:00 MSK 2023","1","tests","test_simple_operations","","","","test_simple_operations[5*8+(3+3)-46]",""
+"passed","Sun Aug 27 19:48:00 MSK 2023","Sun Aug 27 19:48:00 MSK 2023","1","tests","test_simple_operations","","","","test_simple_operations[-203+-407--610]",""
