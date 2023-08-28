@@ -68,8 +68,6 @@ class CalculatorPresenter:
             self.delete_symbol(input_field)
         if btn == "x^":
             self.view.add_to_field("^")
-        # if btn == "mod":
-        #     self.view.add_to_field("mod")
 
     def which_notation(self, input_field):
         if self.polish_notation or self.reverse_polish_notation:
