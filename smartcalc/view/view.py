@@ -56,6 +56,12 @@ class CalculatorView:
             turn_flag()
             if section.name == "SmartCalc v3.0":
                 self.history.export_history()
+                if self.history.tk_window:
+                    self.history.tk_window.destroy()
+                if self.help.tk_window:
+                    self.help.tk_window.destroy()
+                if self.graph.tk_window:
+                    self.graph.tk_window.destroy()
             if section.name == "History":
                 section.frames.clear()
                 section.listbox = None

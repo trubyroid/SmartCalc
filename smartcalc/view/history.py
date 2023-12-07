@@ -54,8 +54,8 @@ class CalculatorHistory:
         self.listbox = Listbox(self.frames[0])
         self.listbox["height"] = 11
         self.listbox["width"] = 125
-        self.listbox["fg"] = "black"
-        self.listbox["selectbackground"] = "blue"
+        self.listbox["fg"] = "white"
+        self.listbox["selectbackground"] = "black"
         self.listbox["font"] = ('Helvetica', 17)
         self.listbox.pack(anchor=NW, fill=X, padx=5, pady=5)
 
