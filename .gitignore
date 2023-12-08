@@ -1,5 +1,5 @@
-history.pickle
-presenter/__pycache__/
-view/__pycache__/
-model/__pycache__/
-venv
+.idea
+smartcalc/history.pickle
+smartcalc/presenter/__pycache__/
+smartcalc/view/__pycache__/
+smartcalc/model/__pycache__/
