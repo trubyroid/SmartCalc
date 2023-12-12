@@ -91,10 +91,11 @@ class CalculatorPresenter:
         """Производит корректировку выражения перед вычислением"""
         corrected_expression = correct_expression(input_field)
         result = self.send_to_model(corrected_expression)
+        self.view.return_mode = True
         self.result_handling(result)
 
     def result_handling(self, result: Any) -> None:
-        if result not in self.view.err_messages:
+        if str(result) not in self.view.err_messages:
             result = floats_handling(result)
         self.view.set_to_field(result)
 
@@ -107,5 +108,5 @@ class CalculatorPresenter:
         qua = check_before_del(input_field, self.view.parentheses_funcs)
         self.view.set_to_field(input_field[:qua])
 
-    def send_to_model(self, expression: str,  x: Any = 0) -> int:
+    def send_to_model(self, expression: str,  x: Any = None) -> int:
         return self.model.calculate_expression(expression, x)

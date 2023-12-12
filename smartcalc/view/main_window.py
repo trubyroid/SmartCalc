@@ -21,6 +21,8 @@ class CalculatorMain:
         self.buttons = {}
         self.frames = []
 
+        self.return_mode = False
+
         self._name = "SmartCalc v3.0"
         # self._geometry = "300x280+700+200"
         self._geometry = "400x320+700+200"
@@ -42,7 +44,17 @@ class CalculatorMain:
             self._seventh, self._eighth, self._ninth
         )
 
-        self._err_messages = ("Infinity", "NaN", "error", "Unknown error")
+        self.operands = (
+            "0", "1", "2", "3", "4", "5",
+            "6", "7", "8", "9",
+            "sin()", "cos()", "tan()", "asin()",
+            "acos()", "atan()", "sqrt()", "ln()", "log()"
+        )
+
+        self._err_messages = ("Infinity",
+                              "nan", "NaN",
+                              "error", "invalid_expression",
+                              "Unknown error")
 
         self.parentheses_funcs = self._second[:3:]\
             + self._third + self._fourth[:2:]
@@ -93,7 +105,7 @@ class CalculatorMain:
         self.input_field["invalidcommand"] = invalid_cmd
         self.input_field["width"] = 30
         self.input_field["font"] = ("Helvetica", 20)
-        self.input_field.bind("<Key>", lambda e: "break")
+        # self.input_field.bind("<Key>", lambda e: "break")                 #TODO восстановить валидацию
         self.input_field.pack(anchor=W, side=LEFT)
 
     def create_rows_of_buttons(self) -> None:
@@ -125,8 +137,17 @@ class CalculatorMain:
         self.buttons[txt] = btn
 
     def write_or_use(self, btn: str) -> None:
-        if self.input_field.get() in self._err_messages:
-            self.presenter.clear_expression()
+        """Определяет добавить в entry-поле или использовать нажатую кнопку"""
+
+        def clear_or_add():
+            """Определяет нужно ли очистить поле или продолжить писать"""
+            if self.input_field.get() in self._err_messages\
+                    or self.return_mode and btn in self.operands:
+                self.presenter.clear_expression()
+            self.return_mode = False
+
+        clear_or_add()
+
         if btn not in self.except_funcs:
             if btn in self.parentheses_funcs:
                 btn = btn[:-1]

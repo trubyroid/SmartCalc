@@ -6,9 +6,7 @@ calc_model = CalculatorModel()
 
 @pytest.mark.parametrize("case, expected_exception",
                          [("15/0", ZeroDivisionError),
-                          ("0+00123", SyntaxError),
-                          ("sqrt(-1)", ValueError),
-                          ("()*()*()*0", TypeError)])
+                          ("0+00123", SyntaxError)])
 def test_negative_cases(monkeypatch, case, expected_exception):
 
     with pytest.raises(expected_exception):

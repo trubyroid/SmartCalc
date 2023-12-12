@@ -31,44 +31,14 @@ def paranthesis_handling(field_string: str) -> str:
 
 def handling_for_eval(expr: str) -> str:
     """Видоизменяет строку перед тем, как она попадет в eval"""
-    return expr.\
-        replace("log", "log10").\
-        replace("ln", "log").\
-        replace("^", "**").\
-        replace("mod", "%")
+    return expr.replace("mod", "%")
+    # return expr
 
 
 def correct_expression(expression: str) -> str:
     corrected_str = paranthesis_handling(expression)
     corrected_str = handling_for_eval(corrected_str)
     return corrected_str
-
-
-def plot_expression_handling(expression: str) -> str:
-    """Корректирует выражение"""
-    fixes_one = {
-        "asin": "np.arcsin",
-        "acos": "np.arccos",
-        "atan": "np.arctan",
-        "sin": "np.sin",
-        "cos": "np.cos",
-        "tan": "np.tan",
-        "sqrt": "np.sqrt",
-        "log": "np.log",
-        "ln": "np.ln"
-    }
-    fixes_two = {
-        "arcnp.sin": "arcsin",
-        "arcnp.cos": "arccos",
-        "arcnp.tan": "arctan",
-    }
-    fixed_expr = expression
-    for key, val in fixes_one.items():
-        fixed_expr = fixed_expr.replace(key, val)
-    for key, val in fixes_two.items():
-        fixed_expr = fixed_expr.replace(key, val)
-    fixed_expr = correct_expression(fixed_expr)
-    return fixed_expr
 
 
 def floats_handling(num: Any) -> Any:

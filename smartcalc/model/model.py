@@ -3,31 +3,64 @@
 """
 
 from typing import Any
-from math import *
+
+import ast
+
+import simpleeval
+from simpleeval import SimpleEval, safe_power, simple_eval
+import operator
+# from simpleeval import simple_eval
+
 import numpy as np
+from math import *
+
+from icecream import ic
+
+
+def my_mod(a, b):
+    return a % b
 
 
 class CalculatorModel:
-    def __init__(self):
-        ...
 
-    def get_result(self, expression: str, x: Any = 0):
+    def __init__(self):
+        self.s = SimpleEval()
+        self.s.operators[ast.BitXor] = safe_power
+        # self.s.operators[ast.Mod] = operator.mod            #TODO mod
+
+        self.s.functions.update({"sin": np.sin,
+                                 "cos": np.cos,
+                                 "tan": np.tan,
+                                 "asin": np.arcsin,
+                                 "acos": np.arccos,
+                                 "atan": np.arctan,
+                                 "sqrt": np.sqrt,
+                                 "ln": log,
+                                 "log": log10
+                                 })
+
+    def get_result(self, expression: str, x: Any = None):
         """Eval используется для вычисления всех выражений.
         Безопасность обеспечивается запретом на ввод символов в
         entry-поле с клавиатуры"""
-        return eval(expression)
+        if x is not None:
+            self.s.names["x"] = x
+        return self.s.eval(expression)
+        # ic(expression)
+        # ic(result)
+        # ic(type(result))
 
-    def calculate_expression(self, expression: str, x: Any = 0) -> Any:
+    def calculate_expression(self, expression: str, x: Any = None) -> Any:
         try:
             return self.get_result(expression, x)
         except ZeroDivisionError:
             return "Infinity"
         except SyntaxError:
             return "error"
-        except ValueError:
-            return "NaN"
         except TypeError:
             return "error"
+        except simpleeval.InvalidExpression:
+            return "invalid_expression"
         except Exception:
             return "Unknown error"
 

@@ -1,6 +1,6 @@
 from ..model.model import CalculatorModel
 import pytest
-import allure
+# import allure
 
 calc_model = CalculatorModel()
 
@@ -22,17 +22,17 @@ calc_model = CalculatorModel()
                           ("9%2%2", 1),
                           ("sqrt(4)", 2),
                           ("sqrt(256)", 16),
-                          ("log10(100) + log10(10000)", 6),
+                          ("log(100) + log(10000)", 6),
                           ("+-11", -11),
                           ("+11", 11)])
 def test_simple_operations(expression, expected_result):
     assert calc_model.calculate_expression(expression) == expected_result
 
 
-@allure.description("""
-В рамках этих тест-кейсов разные машины могут давать разный результат.
-Причина в разных способах округления чисел с плавающей точкой.
-""")
+# @allure.description("""
+# В рамках этих тест-кейсов разные машины могут давать разный результат.
+# Причина в разных способах округления чисел с плавающей точкой.
+# """)
 @pytest.mark.xfail(condition=lambda: True, reason='expecting failure')
 @pytest.mark.parametrize("expression, expected_result",
                          [("log(10) + log(10)", 4.605170185988092),

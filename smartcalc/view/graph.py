@@ -4,7 +4,7 @@
 
 import tkinter as tk
 from tkinter import messagebox
-from presenter.utils import paranthesis_check, plot_expression_handling
+from presenter.utils import paranthesis_check
 import matplotlib.pyplot as plt
 import numpy as np
 
@@ -72,11 +72,10 @@ class CalculatorGraph:
 
     def create_graph(self, expression: str) -> None:
         if self.x_range and self.y_range:
-            fixed_expression = plot_expression_handling(expression)
 
             x = np.linspace(self.x_range[0], self.x_range[1], 1000)
             y = self.view.presenter.send_to_model(
-                fixed_expression, x)
+                expression, x)
 
             plt.plot(x, y)
             plt.xlabel('x')
