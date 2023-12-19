@@ -39,20 +39,17 @@ class CalculatorModel:
                                  "log": log10
                                  })
 
-    def get_result(self, expression: str, x: Any = None):
-        """Eval используется для вычисления всех выражений.
-        Безопасность обеспечивается запретом на ввод символов в
-        entry-поле с клавиатуры"""
-        if x is not None:
-            self.s.names["x"] = x
-        return self.s.eval(expression)
-        # ic(expression)
-        # ic(result)
-        # ic(type(result))
+    def set_x(self, x):
+        self.s.names["x"] = x
 
-    def calculate_expression(self, expression: str, x: Any = None) -> Any:
+    # def unset_x(self, x):
+
+    def get_result(self, expression: str):
+        return self.s.eval(expression)
+
+    def calculate_expression(self, expression: str) -> Any:
         try:
-            return self.get_result(expression, x)
+            return self.get_result(expression)
         except ZeroDivisionError:
             return "Infinity"
         except SyntaxError:
