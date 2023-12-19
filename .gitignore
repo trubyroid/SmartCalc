@@ -1,4 +1,5 @@
 .idea
+venv
 smartcalc/history.pickle
 smartcalc/presenter/__pycache__/
 smartcalc/view/__pycache__/
