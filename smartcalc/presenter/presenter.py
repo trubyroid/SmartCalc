@@ -108,5 +108,8 @@ class CalculatorPresenter:
         qua = check_before_del(input_field, self.view.parentheses_funcs)
         self.view.set_to_field(input_field[:qua])
 
-    def send_to_model(self, expression: str,  x: Any = None) -> int:
-        return self.model.calculate_expression(expression, x)
+    def send_to_model(self, expression: str) -> int:
+        return self.model.calculate_expression(expression)
+
+    def set_x_to_model(self, x):
+        self.model.set_x(x)

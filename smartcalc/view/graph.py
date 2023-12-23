@@ -74,8 +74,13 @@ class CalculatorGraph:
         if self.x_range and self.y_range:
 
             x = np.linspace(self.x_range[0], self.x_range[1], 1000)
+
+            self.view.presenter.set_x_to_model(x)
+
             y = self.view.presenter.send_to_model(
-                expression, x)
+                expression)
+
+            # self.view.presenter.unset_x()
 
             plt.plot(x, y)
             plt.xlabel('x')

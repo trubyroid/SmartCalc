@@ -1,4 +1,5 @@
 .idea
+venv
 smartcalc/history.pickle
 *.DS_Store
 *__pycache__*
