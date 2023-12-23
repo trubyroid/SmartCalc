@@ -5,7 +5,7 @@
 from tkinter import ttk
 
 
-class CalculatorHelp:
+class Help:
     def __init__(self):
         self.tk_window = None
         self._name = "Help"

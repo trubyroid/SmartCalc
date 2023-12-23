@@ -11,7 +11,7 @@ from tkinter import messagebox
 from tkinter.messagebox import askyesno
 
 
-class CalculatorHistory:
+class History:
     def __init__(self, view):
         self.view = view.main_window
         self.tk_window = None
@@ -54,8 +54,8 @@ class CalculatorHistory:
         self.listbox = Listbox(self.frames[0])
         self.listbox["height"] = 11
         self.listbox["width"] = 125
-        self.listbox["fg"] = "white"
-        self.listbox["selectbackground"] = "black"
+        self.listbox["fg"] = "black"
+        self.listbox["selectbackground"] = "white"
         self.listbox["font"] = ('Helvetica', 17)
         self.listbox.pack(anchor=NW, fill=X, padx=5, pady=5)
 

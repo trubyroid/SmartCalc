@@ -7,10 +7,10 @@ from tkinter import ttk
 from tkinter import Entry, Frame
 from tkinter import W, DISABLED, NORMAL, RIGHT, LEFT, END
 from typing import Callable
-from presenter.presenter import CalculatorPresenter
+from presenter.presenter import Presenter
 
 
-class CalculatorMain:
+class MainWindow:
     def __init__(self, view_proc):
         self.view_proc = view_proc
         self.presenter = None
@@ -74,7 +74,7 @@ class CalculatorMain:
     def err_messages(self) -> tuple:
         return self._err_messages
 
-    def set_presenter(self, presenter: CalculatorPresenter):
+    def set_presenter(self, presenter: Presenter):
         self.presenter = presenter
 
     def create_gui(self) -> None:

@@ -10,7 +10,7 @@ from presenter.utils import correct_expression, \
     reverse_expression
 
 
-class CalculatorPresenter:
+class Presenter:
 
     def __init__(self):
         self.view = None

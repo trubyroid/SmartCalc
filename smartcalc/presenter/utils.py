@@ -30,9 +30,8 @@ def paranthesis_handling(field_string: str) -> str:
 
 
 def handling_for_eval(expr: str) -> str:
-    """Видоизменяет строку перед тем, как она попадет в eval"""
+    """Видоизменяет строку для расчета в simple_eval"""
     return expr.replace("mod", "%")
-    # return expr
 
 
 def correct_expression(expression: str) -> str:

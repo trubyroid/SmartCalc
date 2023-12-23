@@ -2,22 +2,22 @@
 В этом модуле запускается программа и подготавливаются все возможные окна
 """
 
-from view.main_window import CalculatorMain
-from view.history import CalculatorHistory
-from view.help import CalculatorHelp
-from view.graph import CalculatorGraph
+from view.main_window import MainWindow
+from view.history import History
+from view.help import Help
+from view.graph import Graph
 from view.utils import create_window, make_frames
 from tkinter import Tk
 from typing import Union
 
 
-class CalculatorView:
+class View:
     def __init__(self):
 
-        self.main_window = CalculatorMain(self)
-        self.history = CalculatorHistory(self)
-        self.help = CalculatorHelp()
-        self.graph = CalculatorGraph(self.main_window)
+        self.main_window = MainWindow(self)
+        self.history = History(self)
+        self.help = Help()
+        self.graph = Graph(self.main_window)
 
         self.help_state = False
         self.history_state = False
@@ -34,9 +34,9 @@ class CalculatorView:
             self.graph.graph_preparing()
 
     def open_section(self,
-                     section: Union[CalculatorMain,
-                                    CalculatorHelp,
-                                    CalculatorHistory]) -> None:
+                     section: Union[MainWindow,
+                                    Help,
+                                    History]) -> None:
 
         def turn_flag() -> None:
             if section.name == "Help":
@@ -60,12 +60,11 @@ class CalculatorView:
                     self.history.tk_window.destroy()
                 if self.help.tk_window:
                     self.help.tk_window.destroy()
-                if self.graph.tk_window:
-                    self.graph.tk_window.destroy()
             if section.name == "History":
                 section.frames.clear()
                 section.listbox = None
             section.tk_window.destroy()
+            section.tk_window = None
 
         if not get_flag():
             turn_flag()

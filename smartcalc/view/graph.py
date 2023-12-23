@@ -8,13 +8,16 @@ from presenter.utils import paranthesis_check
 import matplotlib.pyplot as plt
 import numpy as np
 
+LOWER_LIMIT = -1000000
+UPPER_LIMIT = 1000000
 
-class CalculatorGraph:
+class Graph:
     def __init__(self, view) -> None:
         self.view = view
+        self.tk_window = self.view.tk_window
+
         self.range_dialog = None
         self.plot = None
-        self.tk_window = None
         self.x_entry = None
         self.y_entry = None
 
@@ -25,8 +28,6 @@ class CalculatorGraph:
         expression = self.view.input_field.get()
         if not paranthesis_check(expression):
             return
-        
-        self.tk_window = self.view.tk_window
 
         self.range_dialog = tk.Toplevel(self.tk_window)
         self.range_dialog.title("Ranges for graph")
@@ -55,10 +56,10 @@ class CalculatorGraph:
             x_start, x_end = map(float, x_range_str.split(','))
             y_start, y_end = map(float, y_range_str.split(','))
 
-            if x_start < -1000000 \
-                    or y_start < -1000000 \
-                    or x_end > 1000000 \
-                    or y_end > 1000000:
+            if x_start < LOWER_LIMIT \
+                    or y_start < LOWER_LIMIT \
+                    or x_end > UPPER_LIMIT \
+                    or y_end > UPPER_LIMIT:
                 raise ValueError
 
             self.x_range = (x_start, x_end)
@@ -79,8 +80,6 @@ class CalculatorGraph:
 
             y = self.view.presenter.send_to_model(
                 expression)
-
-            # self.view.presenter.unset_x()
 
             plt.plot(x, y)
             plt.xlabel('x')

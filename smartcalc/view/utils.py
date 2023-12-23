@@ -1,27 +1,30 @@
-from view.main_window import CalculatorMain
-from view.history import CalculatorHistory
-from view.help import CalculatorHelp
+from view.main_window import MainWindow
+from view.history import History
+from view.help import Help
 from tkinter import Frame
 from typing import Union
 
+MAIN_WINDOWS_FRAMES = 11
+HISTORY_FRAMES = 2
+DEFAULT_FRAMES = 0
 
-def create_window(obj: Union[CalculatorMain,
-                             CalculatorHelp,
-                             CalculatorHistory]) -> None:
+def create_window(obj: Union[MainWindow,
+                             Help,
+                             History]) -> None:
     obj.tk_window.title(obj.name)
     obj.tk_window.geometry(obj.geometry)
     obj.tk_window.mainloop()
 
 
-def make_frames(section: Union[CalculatorMain,
-                               CalculatorHelp,
-                               CalculatorHistory]) -> None:
+def make_frames(section: Union[MainWindow,
+                               Help,
+                               History]) -> None:
     if section.name == "SmartCalc v3.0":
-        quantity = 11
+        quantity = MAIN_WINDOWS_FRAMES
     elif section.name == "History":
-        quantity = 2
+        quantity = HISTORY_FRAMES
     else:
-        quantity = 0
+        quantity = DEFAULT_FRAMES
 
     for _ in range(quantity):
         new_frame = Frame(section.tk_window)
