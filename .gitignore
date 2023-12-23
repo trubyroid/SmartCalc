@@ -1,5 +1,4 @@
 .idea
 smartcalc/history.pickle
-smartcalc/presenter/__pycache__/
-smartcalc/view/__pycache__/
-smartcalc/model/__pycache__/
+*.DS_Store
+*__pycache__*
