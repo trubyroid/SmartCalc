@@ -4,10 +4,7 @@
 """
 
 import pickle
-from tkinter import NW, X, END, LEFT
-from tkinter import ttk
-from tkinter import Listbox
-from tkinter import messagebox
+from tkinter import END, LEFT, NW, Listbox, X, messagebox, ttk
 from tkinter.messagebox import askyesno
 
 

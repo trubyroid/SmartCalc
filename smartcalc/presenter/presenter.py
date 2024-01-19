@@ -5,9 +5,10 @@ Presenter является посредником между
 """
 
 from typing import Any
-from presenter.utils import correct_expression, \
-    check_before_del, floats_handling, paranthesis_check, \
-    reverse_expression
+
+from presenter.utils import (check_before_del, correct_expression,
+                             floats_handling, paranthesis_check,
+                             reverse_expression)
 
 
 class Presenter:
@@ -80,11 +81,13 @@ class Presenter:
 
         if self.polish_notation is True:
             input_field = reverse_expression(input_field)
+
         tokens = input_field.split()
+
         if not tokens[0].isdigit() and not tokens[0][1:].isdigit():
             self.view.set_to_field("error")
         else:
-            result = self.model.polish_calculate(tokens)
+            result = self.model.polish_calculate(tokens, reverse_pn=self.reverse_polish_notation)
             self.result_handling(result)
 
     def infix_precalculate(self, input_field: str) -> None:

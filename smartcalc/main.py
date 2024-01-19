@@ -1,6 +1,6 @@
-from view.view import View
-from presenter.presenter import Presenter
 from model.model import Model
+from presenter.presenter import Presenter
+from view.view import View
 
 if __name__ == '__main__':
     model = Model()

@@ -4,9 +4,10 @@
 
 import tkinter as tk
 from tkinter import messagebox
-from presenter.utils import paranthesis_check
+
 import matplotlib.pyplot as plt
 import numpy as np
+from presenter.utils import paranthesis_check
 
 LOWER_LIMIT = -1000000
 UPPER_LIMIT = 1000000

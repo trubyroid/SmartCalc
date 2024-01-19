@@ -2,13 +2,14 @@
 В этом модуле запускается программа и подготавливаются все возможные окна
 """
 
-from view.main_window import MainWindow
-from view.history import History
-from view.help import Help
-from view.graph import Graph
-from view.utils import create_window, make_frames
 from tkinter import Tk
 from typing import Union
+
+from view.graph import Graph
+from view.help import Help
+from view.history import History
+from view.main_window import MainWindow
+from view.utils import create_window, make_frames
 
 
 class View:

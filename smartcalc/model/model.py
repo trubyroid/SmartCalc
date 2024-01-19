@@ -2,19 +2,15 @@
 В этом модуле происходят все вычисления.
 """
 
-from typing import Any
-
 import ast
-
-import simpleeval
-from simpleeval import SimpleEval, safe_power, simple_eval
 import operator
-# from simpleeval import simple_eval
+from math import *
+from typing import Union
 
 import numpy as np
-from math import *
-
+import simpleeval
 from icecream import ic
+from simpleeval import SimpleEval, safe_power, simple_eval
 
 
 class Model:
@@ -34,10 +30,10 @@ class Model:
                                  "log": log10
                                  })
 
-    def set_x(self, x):
+    def set_x(self, x) -> None:
         self.s.names["x"] = x
 
-    def calculate_expression(self, expression: str) -> Any:
+    def calculate_expression(self, expression: str) -> Union[int, float, str]:
         try:
             return self.get_result(expression)
         except ZeroDivisionError:
@@ -51,30 +47,35 @@ class Model:
         except Exception:
             return "unknown_error"
 
-    def get_result(self, expression: str):
+    def get_result(self, expression: str) -> Union[int, float]:
         return self.s.eval(expression)
 
-    def polish_calculate(self, tokens: list) -> int:
+    def polish_calculate(self, tokens: list, reverse_pn: bool) -> Union[int, float]:
         """Алгоритм вычисления выражений в Польской нотации"""
 
         stack = []
         i = 0
+
         while i < len(tokens):
             if tokens[i].isdigit() or tokens[i][1:].isdigit():
                 stack.append(tokens[i])
             elif tokens[i] in ["+", "-", "*", "/", "%", "**"]:
-                stack.append(self.get_polish_result(operator=tokens[i], stack=stack))
+                stack.append(self.get_polish_result(operator=tokens[i], stack=stack, reverse_pn=reverse_pn))
             elif tokens[i] == "(":
                 i += self.polish_paranthesis(tokens, stack)
             i += 1
         if len(stack) == 1:
             return stack.pop()
 
-    def get_polish_result(self, operator: str, stack: list):
+    def get_polish_result(self, operator: str, stack: list, reverse_pn: bool) -> Union[int, float, str]:
         """Вычисляет результат одной операции в польской нотации"""
         if len(stack) > 1:
-            operand2 = stack.pop()
             operand1 = stack.pop()
+            operand2 = stack.pop()
+
+            if reverse_pn:
+                operand1, operand2 = operand2, operand1
+
             expression = f"{operand1} {operator} {operand2}"
         else:
             operand = stack.pop()
@@ -82,7 +83,7 @@ class Model:
 
         return self.calculate_expression(expression)
 
-    def polish_paranthesis(self, tokens: list, stack: list):
+    def polish_paranthesis(self, tokens: list, stack: list) -> Union[int, float]:
         """Обрабатывает и вычисляет выражения внутри скобок"""
         open_ind = tokens.index("(")
         close_ind = tokens.index(")")

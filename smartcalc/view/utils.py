@@ -1,8 +1,9 @@
-from view.main_window import MainWindow
-from view.history import History
-from view.help import Help
 from tkinter import Frame
 from typing import Union
+
+from view.help import Help
+from view.history import History
+from view.main_window import MainWindow
 
 MAIN_WINDOWS_FRAMES = 11
 HISTORY_FRAMES = 2

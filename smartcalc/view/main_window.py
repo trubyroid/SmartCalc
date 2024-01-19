@@ -3,10 +3,9 @@
 с интерфейсом главного окна калькулятора.
 """
 
-from tkinter import ttk
-from tkinter import Entry, Frame
-from tkinter import W, DISABLED, NORMAL, RIGHT, LEFT, END
+from tkinter import DISABLED, END, LEFT, NORMAL, RIGHT, Entry, Frame, W, ttk
 from typing import Callable
+
 from presenter.presenter import Presenter
 
 
