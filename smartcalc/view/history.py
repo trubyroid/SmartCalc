@@ -18,7 +18,7 @@ class History:
         self._geometry = "400x280+1000+200"
         self._name = "History"
         self._buttons = ("Add to calc", "Delete", "Clear history")
-        self._history_filename = 'history.pickle'
+        self._history_filename = 'smartcalc/history.pickle'
 
         self._operations = []
         self.frames = []
