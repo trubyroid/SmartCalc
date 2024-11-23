@@ -18,7 +18,7 @@ SMART CALC
 3. Для установки зависимостей `pip install -r requirements.txt`
 
 ## Cтарт
-Для установки (only for MacOS) - `python3 install_script.py` / Для запуска без установки - `python3 main.py`.  
+Для установки (MacOS) - `python3 install_script.py` / Для запуска без установки - `python3 main.py`.  
 Перед установкой будет запрошен путь (по умолчанию /Applications) и нужно ли создать ярлык на рабочем столе.
 
 ## Главное окно
