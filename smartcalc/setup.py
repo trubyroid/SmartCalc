@@ -5,7 +5,7 @@ APP = ['main.py']
 DATA_FILES = ['history.pickle']
 
 OPTIONS = {
-    'iconfile': 'calc_icon.icns',
+    'iconfile': 'icon/calc_icon.icns',
     'argv_emulation': False,
     'plist': {
         'CFBundleShortVersionString': '3.0',

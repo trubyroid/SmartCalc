@@ -3,13 +3,11 @@
 """
 
 import ast
-import operator
 from math import *
 from typing import Union
 
 import numpy as np
 import simpleeval
-from icecream import ic
 from simpleeval import SimpleEval, safe_power, simple_eval
 
 
