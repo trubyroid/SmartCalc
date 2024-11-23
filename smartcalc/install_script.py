@@ -1,6 +1,6 @@
 import os
 
-# Какой путь установки приложения ?
+# Какой путь установки приложения?
 while True:
     install_path = input("Insert path to install application: ")
     if os.path.exists(install_path):
