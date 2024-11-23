@@ -6,9 +6,20 @@ SMART CALC
 - Графики функций
 - Польские нотации
 
-## Быстрый старт
-1. Для установки зависимостей `pip install -r requirements.txt`
-2. Для запуска калькулятора `python3 smartcalc/main.py`
+## Подготовка (в директории `smartcalc`)
+
+**Poetry**
+1. Для запуска виртуального окружения `poetry shell`
+2. Для установки зависимостей `poetry install`
+
+**Pip**
+1. Для создания виртуального окружения `python3 -m venv venv`
+2. Для запуска виртуального окружения `source venv/bin/activate`
+3. Для установки зависимостей `pip install -r requirements.txt`
+
+## Cтарт
+Для установки (only for MacOS) - `python3 install_script.py` / Для запуска без установки - `python3 main.py`.  
+Перед установкой будет запрошен путь (по умолчанию /Applications) и нужно ли создать ярлык на рабочем столе.
 
 ## Главное окно
 ![Main window](./images/main_screen.png)  
