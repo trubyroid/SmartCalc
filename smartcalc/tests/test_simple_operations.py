@@ -1,8 +1,5 @@
-from ..model.model import CalculatorModel
 import pytest
 # import allure
-
-calc_model = CalculatorModel()
 
 
 @pytest.mark.parametrize("expression, expected_result",
@@ -25,7 +22,7 @@ calc_model = CalculatorModel()
                           ("log(100) + log(10000)", 6),
                           ("+-11", -11),
                           ("+11", 11)])
-def test_simple_operations(expression, expected_result):
+def test_simple_operations(expression, expected_result, calc_model):
     assert calc_model.calculate_expression(expression) == expected_result
 
 
@@ -42,5 +39,5 @@ def test_simple_operations(expression, expected_result):
                           ("asin(0.5)", 0.5235987755982988),
                           ("acos(0.8)", 0.6435011087932843),
                           ("atan(0.9)", 0.7328151017865067)])
-def test_trigonometry_operations(expression, expected_result):
+def test_trigonometry_operations(expression, expected_result, calc_model):
     assert calc_model.calculate_expression(expression) == expected_result

@@ -8,7 +8,7 @@ from typing import Union
 
 import numpy as np
 import simpleeval
-from simpleeval import SimpleEval, safe_power, simple_eval
+from simpleeval import SimpleEval, safe_power
 
 
 class Model:
@@ -60,7 +60,7 @@ class Model:
             elif tokens[i] in ["+", "-", "*", "/", "%", "**"]:
                 stack.append(self.get_polish_result(operator=tokens[i], stack=stack, reverse_pn=reverse_pn))
             elif tokens[i] == "(":
-                i += self.polish_paranthesis(tokens, stack)
+                i += self.polish_paranthesis(tokens, stack, reverse_pn)
             i += 1
         if len(stack) == 1:
             return stack.pop()
@@ -81,7 +81,7 @@ class Model:
 
         return self.calculate_expression(expression)
 
-    def polish_paranthesis(self, tokens: list, stack: list) -> Union[int, float]:
+    def polish_paranthesis(self, tokens: list, stack: list, reverse_pn: bool) -> Union[int, float]:
         """Обрабатывает и вычисляет выражения внутри скобок"""
         open_ind = tokens.index("(")
         close_ind = tokens.index(")")
@@ -90,5 +90,5 @@ class Model:
             for _ in range(tokens.count("(") - 1):
                 close_ind = tokens.index(")", close_ind + 1)
             tkns = tokens[open_ind + 1:close_ind:]
-        stack.append(self.polish_calculate(tkns))
+        stack.append(self.polish_calculate(tkns, reverse_pn))
         return len(tkns)

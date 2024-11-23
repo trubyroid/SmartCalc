@@ -1,7 +1,4 @@
-from ..model.model import CalculatorModel
 import pytest
-
-calc_model = CalculatorModel()
 
 
 @pytest.mark.parametrize("expression, expected_result",
@@ -13,5 +10,5 @@ calc_model = CalculatorModel()
                           (["+11", "-"], -11),
                           (["11", "+"], 11),
                           (["-11", "+"], -11)])
-def test_polish_notation(expression, expected_result):
-    assert calc_model.polish_calculate(expression) == expected_result
+def test_reverse_polish_notation(expression, expected_result, calc_model):
+    assert calc_model.polish_calculate(expression, reverse_pn=True) == expected_result
