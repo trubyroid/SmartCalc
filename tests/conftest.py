@@ -1,5 +1,5 @@
 import pytest
-from ..model.model import Model
+from ..smartcalc.model.model import Model
 
 
 @pytest.fixture(scope="session")
