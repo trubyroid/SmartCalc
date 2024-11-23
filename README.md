@@ -8,7 +8,7 @@ SMART CALC
 
 ## Быстрый старт
 1. Для установки зависимостей `pip install -r requirements.txt`
-2. Для запуска калькулятора используйте `python3 smartcalc/main.py`
+2. Для запуска калькулятора `python3 smartcalc/main.py`
 
 ## Главное окно
 ![Main window](./images/main_screen.png)  
